@@ -13,7 +13,7 @@
         </v-img>
         <v-card-title>
           <div>
-            <span class="grey--text">Date: {{date}}</span>
+            <span class="grey--text">End Date: {{date}}</span>
           </div>
         </v-card-title>
          <v-card-title>

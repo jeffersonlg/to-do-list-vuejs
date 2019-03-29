@@ -32,8 +32,8 @@ export default new Vuex.Store({
     },
     actions: {
         login({ commit }, { email, password}) {
-            commit('setError', false);
-            commit('setLoading', true);
+            commit('setError', false)
+            commit('setLoading', true)
             firebase.auth().signInWithEmailAndPassword(email, password).then(
                 user => {
                     commit('setUser', user),
@@ -42,11 +42,11 @@ export default new Vuex.Store({
                     router.push('home') 
                 })
                 .catch(() => {
-                    commit('setError', true);
-                    commit('setLoading', false);
+                    commit('setError', true)
+                    commit('setLoading', false)
                     commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                    router.push('/');
+                    commit('setIsAuthenticated', false)
+                    router.push('/')
                 });
         },
 
@@ -69,21 +69,21 @@ export default new Vuex.Store({
         logout({ commit }) {
             firebase.auth().signOut().then(
                 () => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
+                    commit('setUser', null)
+                    commit('setIsAuthenticated', false)
                     router.push('/');
                 })
                 .catch(() => {
-                    commit('setUser', null);
-                    commit('setIsAuthenticated', false);
-                    router.push('/');
+                    commit('setUser', null)
+                    commit('setIsAuthenticated', false)
+                    router.push('/')
                 });
         },
 
     },
     getters: {
         isAuthenticated(state) {
-            return state.user !== null && state.user !== undefined;
+            return state.user !== null && state.user !== undefined
         }
     }
     

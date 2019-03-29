@@ -25,7 +25,7 @@ export default {
     },
     computed: {
       ativity() {
-        return  _.orderBy(this.$store.state.activityData, ['priority'])
+        return  _.orderBy(this.$store.state.activityData,['priority'])
       }
 
     },

@@ -41,12 +41,12 @@ router.beforeEach((to, from, next) => {
         if (!store.state.isAuthenticated) {
             next({
                 path: '/'
-            });
+            })
         } else {
-            next();
+            next()
         }
     } else {
-        next();
+        next()
     }
 })
 
